@@ -1,0 +1,1239 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c5530;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.3rem; }
+h6 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+/* Header */
+.header {
+    background: rgba(44, 85, 48, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px; /* Made smaller as requested */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #d4af37;
+}
+
+.brand-name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #d4af37;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../images/ajmer-sharif-dargah-night-ziyarat-crowd.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(44, 85, 48, 0.8), rgba(139, 69, 19, 0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.bismillah {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(212, 175, 55, 0.9);
+    color: #2c5530;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #d4af37;
+    color: #2c5530;
+}
+
+.btn-primary:hover {
+    background: #b8941f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #2c5530;
+    transform: translateY(-2px);
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c5530;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af37, #2c5530);
+}
+
+/* About Us Section */
+.about-us {
+    background: #fff;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.content-block p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.image-feature {
+    text-align: center;
+}
+
+.feature-image {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+    transform: scale(1.05);
+}
+
+.info-section, .duties-section, .legacy-section, .role-section, .tradition-section, .hospitality-section, .custodianship-section, .legal-section {
+    margin-bottom: 4rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    border-left: 3px solid #d4af37;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Duties Grid */
+.duties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.duty-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.duty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.duty-card i {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.duty-card h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+/* Legacy Content */
+.legacy-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.legacy-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.legacy-text li {
+    padding: 0.3rem 0;
+    color: #666;
+}
+
+.legacy-image {
+    text-align: center;
+}
+
+/* Role Grid */
+.role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.role-item {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #d4af37;
+}
+
+.role-item i {
+    font-size: 2rem;
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.role-item h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.role-conclusion {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Tradition Content */
+.tradition-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.tradition-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tradition-text li {
+    padding: 0.5rem 0;
+    border-left: 3px solid #d4af37;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Hospitality Grid */
+.hospitality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.hospitality-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #d4af37;
+}
+
+.hospitality-item i {
+    font-size: 2rem;
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.hospitality-item h4 {
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.hospitality-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Global Services */
+.global-services {
+    list-style: none;
+    padding-left: 0;
+}
+
+.global-services li {
+    padding: 0.5rem 0;
+    border-left: 3px solid #2c5530;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Legal Points */
+.legal-points {
+    list-style: none;
+    padding-left: 0;
+}
+
+.legal-points li {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #d4af37;
+}
+
+/* Khwaja Section */
+.khwaja-section {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.khwaja-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.intro-content .lead {
+    text-align: justify;
+}
+
+.life-section, .spiritual-journey, .divine-lineage, .divine-mandate, .ajmer-arrival, .blessed-character {
+    margin-bottom: 4rem;
+}
+
+.life-section p, .spiritual-journey p, .divine-mandate p, .ajmer-arrival p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* Silsila Chain */
+.silsila-chain {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.chain-item {
+    background: linear-gradient(135deg, #2c5530, #3a6b3e);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.chain-item.final {
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #2c5530;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.chain-arrow {
+    color: #d4af37;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/* Divine Quotes */
+.divine-quote {
+    background: linear-gradient(135deg, #2c5530, #3a6b3e);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+    border-left: 5px solid #d4af37;
+    text-align: center;
+}
+
+/* Arrival Content */
+.arrival-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.arrival-text p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* Titles Grid */
+.titles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.title-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #d4af37;
+    font-weight: 600;
+    color: #2c5530;
+}
+
+.title-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}
+
+/* Teachings Section */
+.teachings-section {
+    background: #fff;
+}
+
+.teachings-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.literary-works {
+    margin-bottom: 4rem;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.work-item {
+    background: linear-gradient(135deg, #2c5530, #3a6b3e);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-3px);
+}
+
+.core-teachings {
+    margin-bottom: 4rem;
+}
+
+.teaching-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.topic-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #d4af37;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.topic-card blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 3px solid #d4af37;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
+
+/* Four Realms */
+.four-realms {
+    margin-bottom: 4rem;
+}
+
+.realms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.realm-card {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.realm-card:hover {
+    transform: translateY(-5px);
+}
+
+.realm-card h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* Sama Section */
+.sama-section {
+    margin-bottom: 4rem;
+}
+
+.sama-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.sama-text p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.sama-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sama-text li {
+    padding: 0.5rem 0;
+    border-left: 3px solid #d4af37;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Blessed Sayings */
+.blessed-sayings {
+    margin-bottom: 4rem;
+}
+
+.sayings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.saying-card {
+    background: linear-gradient(135deg, #2c5530, #3a6b3e);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.saying-card:hover {
+    transform: translateY(-5px);
+}
+
+.saying-card blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* URS Section */
+.urs-section {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.urs-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.urs-details {
+    margin-bottom: 4rem;
+}
+
+.urs-events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.event-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.global-participation {
+    margin-bottom: 4rem;
+}
+
+.participation-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.participation-list li {
+    padding: 0.5rem 0;
+    border-left: 3px solid #2c5530;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #fff;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.contact-info h3 {
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    color: #d4af37;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-top: 0.2rem;
+}
+
+.payment-section h3 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.payment-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.payment-card h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.bank-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-offered {
+    margin-top: 4rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #d4af37;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.service-card h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c5530, #1a3a1e);
+    color: #fff;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #d4af37;
+}
+
+.footer-bottom {
+    border-top: 1px solid #3a6b3e;
+    padding-top: 1rem;
+    text-align: center;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(44, 85, 48, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .content-grid,
+    .khwaja-intro,
+    .legacy-content,
+    .tradition-content,
+    .sama-content,
+    .urs-intro,
+    .contact-grid,
+    .arrival-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 200px;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .duties-grid,
+    .role-grid,
+    .hospitality-grid,
+    .teaching-topics,
+    .realms-grid,
+    .sayings-grid,
+    .urs-events,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .titles-grid,
+    .works-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .hero-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .badge {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .bismillah {
+        font-size: 1.5rem;
+    }
+    
+    .brand-name {
+        font-size: 1.2rem;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .payment-methods {
+        gap: 1rem;
+    }
+    
+    .qr-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll animations */
+@media (prefers-reduced-motion: no-preference) {
+    .duty-card,
+    .role-item,
+    .topic-card,
+    .realm-card,
+    .event-card,
+    .service-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .duty-card.visible,
+    .role-item.visible,
+    .topic-card.visible,
+    .realm-card.visible,
+    .event-card.visible,
+    .service-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .footer,
+    .hero-buttons,
+    .btn {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 2rem 0;
+        background: none;
+        color: #000;
+    }
+    
+    .section-title {
+        color: #000;
+        page-break-after: avoid;
+    }
+    
+    .content-grid,
+    .khwaja-intro,
+    .legacy-content,
+    .tradition-content,
+    .sama-content,
+    .urs-intro,
+    .contact-grid,
+    .arrival-content {
+        grid-template-columns: 1fr;
+    }
+}
+
